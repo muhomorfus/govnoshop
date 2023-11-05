@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация прошла успешно</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            color: black;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            width: 50%;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        a,
+        a:visited {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            color: #007bff;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+
+        .btn-link,
+        .btn-link:hover,
+        .btn-link:focus,
+        .btn-link:visited {
+            text-decoration: none;
+            color: white;
+            background: none;
+        }
+
+        .btn {
+            max-width: 50%;
+            padding: 20px;
+            color: white;
+            background: #007bff;
+            border-radius: .5rem;
+        }
+
+        .email,
+        .email:visited {
+            color: black !important;
+            text-decoration: underline;
+            text-decoration-style: solid;
+        }
+
+        .email:hover,
+        .email:focus {
+            color: black !important;
+            cursor: pointer;
+            text-decoration-style: solid;
+        }
+    </style>
+</head>
+<body>
+<div class="container center">
+    <br>
+    <p>
+        Уважаемый(-ая) {{ name }},
+    </p>
+    <p>
+        Только что было запрошено восстановление пароля для Вашего аккаунта.
+    </p>
+    <p>
+        Если Вы не подавали запрос на восстановление пароля, то просто проигнорируйте это письмо. В противном случае,
+        нажмите на кнопку ниже:
+    </p>
+    <br>
+    <a class="btn-link" href="{{ url }}/auth/reset/{{ token }}" target="_blank">
+        <div class="btn center center-text">Восстановить пароль</div>
+    </a>
+
+    <br>
+    <br>
+    <hr>
+    <a href="{{ url }}">{{ url }}</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<h1>Редактировать {{course.title}}</h1>
+<br>
+
+<form action="/courses/edit" method="post">
+    <div class="form-group row mb-3">
+        <label for="title" class="col-sm-2 col-form-label">Название курса</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Введите название..." required value="{{course.title}}">
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        <label for="price" class="col-sm-2 col-form-label">Цена</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="price" name="price" placeholder="Введите цену..." required min="1" value="{{course.price}}">
+        </div>
+    </div>
+    <div class="form-group row mb-3">
+        <label for="image" class="col-sm-2 col-form-label">URL картинки</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="image" name="image" placeholder="Введите URL..." required
+                   value="{{course.image}}">
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{{id}}">
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <input type="hidden" name="_csrf" value="{{ csrf }}">
+            <button class="btn btn-primary green" type="submit">Редактировать</button>
+        </div>
+    </div>
+</form>
+
+<form action="/courses/remove" method="post">
+    <input type="hidden" name="id" value="{{id}}">
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <input type="hidden" name="_csrf" value="{{ csrf }}">
+            <button class="btn btn-danger" type="submit">Удалить курс</button>
+        </div>
+    </div>
+</form>

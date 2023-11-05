@@ -1,0 +1,25 @@
+<h1>Мои заказы</h1>
+<br>
+
+{{#if orders.length}}
+    {{#each orders}}
+        <div class="card big-text mb-5">
+            <div class="card-body">
+                <h3 class="card-title">Заказ <span class="order-number">{{_id}}</span></h3>
+                <h6 class="card-subtitle text-muted date">{{date}}</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+                {{#each courses}}
+                    <li class="list-group-item">{{course.title}} <span class="text-muted">× {{count}}</span></li>
+                {{/each}}
+            </ul>
+            <div class="card-body">
+                <h5 class="mb-0" style="float: right">
+                    <strong>Цена:</strong> <span class="price">{{total}}</span>
+                </h5>
+            </div>
+        </div>
+    {{/each}}
+{{else}}
+    <p class="big-text">Заказов пока нет ;(</p>
+{{/if}}

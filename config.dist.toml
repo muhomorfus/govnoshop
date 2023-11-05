@@ -1,0 +1,12 @@
+MONGO_URI = "mongodb+srv://user:password@cluster-addr.mongodb.net/collection"
+
+SESSION_SECRET = "session secret"
+
+MAIL_HOST = "smtp.example.com"
+MAIL_PORT = 465
+MAIL_SECURE = true
+MAIL_ADDRESS = "test@example.com"
+MAIL_PASSWORD = "password"
+MAIL_NAME = "Example account"
+
+BASE_URL = "http://example.com"

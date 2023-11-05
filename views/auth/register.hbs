@@ -1,0 +1,33 @@
+<form class="form-sign" action="/auth/register" method="post">
+    <img class="mb-4" src="https://elementary.io/images/icons/apps/128/system-software-install.svg" alt="" width="72"
+         height="72">
+    <h3 class="h3 mb-3 font-weight-normal">Регистрация</h3>
+
+    {{#if error}}
+        <div class="alert alert-danger fade show" role="alert">
+            {{error}}
+        </div>
+    {{/if}}
+
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input name="email" type="email" id="inputEmail" class="form-control sign-top" placeholder="Email" required
+           autofocus>
+    <label for="inputName" class="sr-only">Имя</label>
+    <input name="name" type="text" id="inputName" class="form-control sign-middle" placeholder="Имя" required>
+    <label for="inputPassword" class="sr-only">Пароль</label>
+    <input name="password" type="password" id="inputPassword" class="form-control sign-middle" placeholder="Пароль"
+           required>
+    <label for="inputPasswordRepeat" class="sr-only">Повторите пароль</label>
+    <input name="repeat" type="password" id="inputPasswordRepeat" class="form-control sign-bottom"
+           placeholder="Повторите пароль" required>
+    <!--<div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+    </div>-->
+
+    <input type="hidden" name="_csrf" value="{{ csrf }}">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегестрироваться</button>
+    <p class="mt-3">Уже в системе? <a href="/auth/login">Войти</a></p>
+</form>

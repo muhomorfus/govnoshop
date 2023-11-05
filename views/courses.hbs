@@ -1,0 +1,42 @@
+<h1>Курсы</h1>
+<br>
+
+{{#if courses.length}}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each courses}}
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div style="height: 20em; padding: 1rem">
+                        <img class="card-img-top" src="{{image}}" alt="{{title}}"
+                             style="max-width:100%; max-height:100%;">
+                    </div>
+                    <div class="card-body">
+                        <a href="/courses/{{id}}" target="_blank" class="super-card-title"><h1
+                                class="card-title">{{title}}</h1></a>
+
+                        <h4 class="card-title pricing-card-title mb-4"><span class="price">{{price}}</span> <small
+                                class="text-muted">/ навсегда</small></h4>
+
+                        {{#if @root.isAuth}}
+                            <form action="/cart/add" method="post">
+                                <input type="hidden" name="id" value="{{id}}">
+                                <input type="hidden" name="_csrf" value="{{ @root.csrf }}">
+                                <button type="submit" class="btn btn-lg btn-block btn-primary">Купить</button>
+                            </form>
+                        {{/if}}
+
+                    </div>
+                    {{#if @root.isAuth}}
+                        {{#ifeq @root.userId userId._id}}
+                            <div class="card-footer">
+                                <a href="/courses/{{id}}/edit?allow=true" class="link">Редактировать</a>
+                            </div>
+                        {{/ifeq}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p>Курсов пока нет ;(</p>
+{{/if}}

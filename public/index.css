@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.card-body {
+    bottom: 0;
+}
+
+
+
+.course {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course h1 {
+    margin-bottom: 2rem;
+}
+
+.course img {
+    max-width: 400px;
+    height: auto;
+}
+
+.course .price.big {
+    font-size: 2.5rem;
+}
+
+.big-text {
+    font-size: 1.2rem
+}
+
+.super-navbar {
+    background-color: white !important;
+    padding: 2rem;
+}
+
+.super-navbar .nav-link {
+    color: #404040 !important;
+}
+
+.super-navbar .nav-link.active {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    padding-top: .22rem;
+    padding-bottom: .405rem;
+}
+
+.super-card-title {
+    text-decoration: none;
+    color: black;
+}
+
+.super-card-title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: black;
+}
+
+.super-card-title:visited {
+    color: black;
+}
+
+.order-number {
+    font-size: 1rem;
+    color: black;
+    font-family: 'JetBrains Mono', monospace;
+    background: whitesmoke;
+    padding: .3rem;
+    border-radius: .5rem;
+    display: inline-block;
+    position: relative;
+    bottom: .2rem;
+}
